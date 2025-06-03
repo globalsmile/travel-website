@@ -1,0 +1,51 @@
+/* src/styles/globals.css */
+
+/* Reset margins, padding, and box-sizing */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Root font / default */
+html {
+  font-size: 100%; /* equals 16px by default */
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  background-color: #ffffff;
+  color: #333333;
+  line-height: 1.5;
+}
+
+/* Remove list styles */
+ul {
+  list-style: none;
+}
+
+/* Anchor defaults */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Images responsive */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Container for consistent horizontal padding */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Utility for center‑aligned text */
+.text-center {
+  text-align: center;
+}

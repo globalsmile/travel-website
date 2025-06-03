@@ -1,0 +1,251 @@
+/* src/components/Header.css */
+
+.header {
+  width: 100%;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e5e5e5;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+.travelsy {
+  font-family: 'Mulish', 'Segoe UI', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 100%;
+  letter-spacing: 0px;
+
+}
+
+.header__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 0;
+  position: relative;
+}
+
+.header__logo img {
+  height: 32px;
+  /* Adjust as needed to match Figma */
+}
+
+.header__nav {
+  display: none;
+  /* hide on mobile */
+  gap: 1.5rem;
+  font-family: Mulish;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 100%;
+  letter-spacing: 0px;
+}
+
+.header__link {
+  font-size: 0.95rem;
+  color: #333333;
+  transition: color 0.2s;
+}
+
+.header__link:hover {
+  color: #ff6a00;
+}
+
+.header__actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.header__btn {
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  font-family: Mulish;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 100%;
+  letter-spacing: 0px;
+
+}
+
+.header__btn--primary {
+  background-color: #ff6a00;
+  color: #ffffff;
+  border: none;
+}
+
+.header__icon-btn {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+/* 1) The outer wrapper: a flex container for avatar + arrow + dropdown */
+.avatar-wrapper {
+  position: relative;           /* so dropdown can be positioned absolutely */
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;                  /* space between avatar and arrow */
+}
+
+/* 2) Wrap around the avatar image, so the status dot is placed relative to this */
+.avatar-inner {
+  position: relative;           /* for absolutely positioning the status dot */
+  width: 40px;                  /* adjust diameter as needed */
+  height: 40px;
+}
+
+/* The main circular avatar image */
+.avatar-main {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* The small online/status dot in the top-right of the avatar */
+.avatar-status {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 12px;                  /* adjust size of status dot */
+  height: 12px;
+  border: 2px solid white;      /* white border so it stands out */
+  border-radius: 50%;
+  background-color: #28a745;    /* or use the PNG you imported */
+}
+
+/* 3) The down-arrow immediately to the right of avatar-inner */
+.avatar-arrow {
+  width: 11px;                  /* adjust arrow size */
+  height: 6px;
+  cursor: pointer;
+}
+
+/* 4) The dropdown: hidden by default, shown when you hover or click */
+.header__dropdown {
+  position: absolute;
+  top: 48px;                    /* just below the avatar row (40px avatar + 8px margin) */
+  right: 0;                     /* align dropdown’s right edge with wrapper’s right edge */
+  background-color: #ffffff;
+  border: 1px solid #e5e5e5;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  display: none;                /* hide until you hover or toggle class */
+  flex-direction: column;
+  min-width: 120px;
+  z-index: 1000;
+}
+
+/* Dropdown links */
+.header__dropdown a {
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  color: #333333;
+  transition: background-color 0.2s;
+}
+
+.header__dropdown a:hover {
+  background-color: #f5f5f5;
+}
+
+/* 5) Example: show dropdown on hover of wrapper */
+.avatar-wrapper:hover .header__dropdown {
+  display: flex;
+}
+
+.header__avatar-wrapper {
+  position: relative;
+}
+
+.header__avatar {
+  height: 32px;
+  width: 32px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* Dropdown hidden by default */
+.header__dropdown {
+  position: absolute;
+  top: 40px;
+  right: 0;
+  background-color: #ffffff;
+  border: 1px solid #e5e5e5;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  display: none;
+  flex-direction: column;
+  min-width: 120px;
+}
+
+.header__avatar-wrapper:hover .header__dropdown {
+  display: flex;
+}
+
+.header__dropdown a {
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  color: #333333;
+  transition: background-color 0.2s;
+}
+
+.header__dropdown a:hover {
+  background-color: #f5f5f5;
+}
+
+/* Burger menu (mobile) */
+.header__burger {
+  background: none;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 1.25rem;
+  width: 1.5rem;
+  cursor: pointer;
+}
+
+.header__burger-line {
+  width: 100%;
+  height: 2px;
+  background-color: #333333;
+  border-radius: 1px;
+}
+
+/* When burger toggled, show nav on mobile */
+.header__nav--open {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 60px; /* adjust based on header height */
+  left: 0;
+  width: 100%;
+  background-color: #ffffff;
+  padding: 1rem 0;
+  gap: 1rem;
+  border-top: 1px solid #e5e5e5;
+  text-align: center;
+  z-index: 999;
+}
+
+/* Tablet & up: show nav horizontally, hide burger */
+@media (min-width: 768px) {
+  .header__nav {
+    display: flex !important;
+    position: static;
+    flex-direction: row;
+    background: none;
+    border: none;
+    padding: 0;
+  }
+  .header__burger {
+    display: none;
+  }
+  .header__btn--primary {
+    margin-left: 1rem;
+  }
+}
