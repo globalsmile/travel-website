@@ -277,4 +277,11 @@
   .experience__interest-grid {
     grid-template-rows: repeat(4, 160px);
   }
+  .interest-card__checkmark {
+    width: 18px;
+    height: 18px;
+    font-size: 0.85rem;
+    top: 1.5rem;
+    color: white;
+  }
 }
